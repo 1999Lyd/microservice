@@ -17,21 +17,21 @@ async def add(num1: int, num2: int):
     return {"total": total}
 
 @app.get("/sub/{num1}/{num2}")
-async def add(num1: int, num2: int):
+async def sub(num1: int, num2: int):
     """Add two numbers together"""
 
     total = num1 - num2
     return {"sub": total}
 
 @app.get("/div/{num1}/{num2}")
-async def add(num1: int, num2: int):
+async def div(num1: int, num2: int):
     """Add two numbers together"""
 
     total = num1 / num2
     return {"div": total}
     
 @app.get("/mul/{num1}/{num2}")
-async def add(num1: int, num2: int):
+async def mul(num1: int, num2: int):
     """Add two numbers together"""
 
     total = num1 * num2
