@@ -16,6 +16,26 @@ async def add(num1: int, num2: int):
     total = num1 + num2
     return {"total": total}
 
+@app.get("/sub/{num1}/{num2}")
+async def add(num1: int, num2: int):
+    """Add two numbers together"""
+
+    total = num1 - num2
+    return {"sub": total}
+
+@app.get("/div/{num1}/{num2}")
+async def add(num1: int, num2: int):
+    """Add two numbers together"""
+
+    total = num1 / num2
+    return {"div": total}
+    
+@app.get("/mul/{num1}/{num2}")
+async def add(num1: int, num2: int):
+    """Add two numbers together"""
+
+    total = num1 * num2
+    return {"mul": total}
 
 if __name__ == "__main__":
     uvicorn.run(app, port=8080, host="0.0.0.0")

@@ -1,16 +1,9 @@
-FROM python:3.7.3-stretch
+FROM public.ecr.aws/lambda/python:3.8
 
-# Working Directory
-WORKDIR /app
-
-# Copy source code to working directory
-COPY . hello.py /app/
-COPY . test_hello.py /app/
+RUN mkdir -p /app
 COPY . main.py /app/
-COPY . Makefile /app/
-COPY . requirements.txt /app/
-
-# Install packages from requirements.txt
-# hadolint ignore=DL3013
-RUN pip install --no-cache-dir --upgrade pip &&\
-    pip install --no-cache-dir --trusted-host pypi.python.org -r requirements.txt
+WORKDIR /app
+RUN pip install -r requirements.txt
+EXPOSE 8080
+CMD [ "main.py" ]]
+ENTRYPOINT [ "python" ]
